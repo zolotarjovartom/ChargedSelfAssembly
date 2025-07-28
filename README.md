@@ -16,7 +16,9 @@ The pairwise molecular interactions produced by these scripts are different from
 - `FPathS`, `FPathRes`, discussed above.
 - Specify the path to the directory `.../scripts/methods/...`  
 
-Following the instructuons above, you will get two new outputs
+Following the instructuons above, you will get the output
 
-- `IntCurves_Mammals_pH_Type*|A*|A*|A*.mat`, which contain the interaction energies $\textrm{E}_{i\textrm{-}j}(\Delta z)$ for different pH and pKa values.
-- `SVecs_Mammals_pH_Type*|A*|A*|A*.mat`, which contain the discretised stagger vector, corresponding to discretised axial stagger $\Delta z$.
+- `Species|Type*|A*|A*|A*|pKaGrid.m`, where the "Species" part is replaced in accordance with how you specified the variable `Species` above.
+
+The output above contains both the interaction energies $\textrm{E}_{i\textrm{-}j}(\Delta z)$ as well as the discretisation of $\Delta z$. To access these data at a given pKa value, load the file `Species|Type*|A*|A*|A*|pKaGrid.m` to a variable, say, `out`. Enter `out.S.muMeasure_*.Energy` or `out.S.muMeasure_*.Energy.Staggers` to access the pairwise interaction energy or the discretised axial stagger respectively. The star in `out.S.muMeasure_*.Energy.Staggers` is replaced by the appropriate value of the overlap parameter $\mu(W_{\textrm{R}_{(1)}},W_{\textrm{R}_{(2)}})$. The convention for using the numerical values of the overlap parameter in construction of structure field names is as follows $-0.5\rightarrow \textrm{minus}0\textunderscore5$ for negative values and $0.2\rightarrow 0\textunderscore2$ for non-negative values. The specified value of the overlap parameter applies for both acidic and basic residues. 
+
