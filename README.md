@@ -56,10 +56,12 @@ All of the relevant scripts are found in the directory `.../scripts/mainTextFigu
 
 ## 5. Generating Appendix Figures 
 
+The relevant script is found in `.../scripts/appendixFigures/`. Uncomment the relevant portion of the script to generate the desired Figure. The same file path conventions are used as throughout the rest of this repository. 
+
 ## 6. Computing Environment 
 
 - **OS:** macOS Monterey 12.7.6
-- **MATLAB Release:** R2024b (**note, for `genMainFig5.m` I strongly advise using an earlier release of MATLAB, such as R2022a**)  
+- **MATLAB Release:** R2024b (**note, for `genMainFig*.m` scripts I strongly advise using an earlier release of MATLAB, such as R2022a**)  
 - **Toolbox dependencies:** Bioinformatics Toolbox, Image Processing Toolbox, Optimization Toolbox, Parallel Computing Toolbox (optional, but recommended), Signal Processing Toolbox, Statistics and Machine Learning Toolbox, Symbolic Math Toolbox.
 
 ## 7. References
