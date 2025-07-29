@@ -1,4 +1,10 @@
 # ChargedSelfAssembly
+
+This repository contains the code and raw data required to reproduce the results presented in **"The Role of Ionic Conditions and Charged Residues in
+the Emergence of D-Banded Collagen Microfibrils"**.
+
+**Authors**: Arťom Zolotarjov and Dmitri O. Pushkin.
+
 ## 1. Raw Data Required For Calculations 
 
 Several types of raw data are required to perform the calculations. The methods for obtaining these raw data files are described in the ChiralSelfAssembly repository. You will need: 
