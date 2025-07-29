@@ -3,8 +3,8 @@
 
 Several types of raw data are required to perform the calculations. The methods for obtaining these raw data files are described in the ChiralSelfAssembly repository. You will need: 
 
-- `BulkResData_Type*_|A*|A*|A*_Mammmals.mat`, specified in the variable `FPathRes`.
-- `EffDVecs_Mammals_Type*|A*|A*|A*.mat`, specified in the variable `FPathS`.
+- `BulkResData_Type*_|A*|A*|A*_Mammmals.mat`. Path specified in the variable `FPathRes`.
+- `EffDVecs_Mammals_Type*|A*|A*|A*.mat`. Path specified in the variable `FPathS`.
 
 ## 2. Calculation of Pairwise Interaction Energies (pKa/pH dependent)
 
@@ -44,7 +44,7 @@ This script produces a new type of output file:
 
 - `EqbmProbspKaGrid__Species|Type*|A*|A*|A*.mat`
 
-The output contains the equilibrium probability $`\mathcal{P}_{\textrm{period}}(g)`$ and microfibril energy $\textrm{E}_{\textrm{M}}(g)$.
+The output contains the equilibrium probability $`\mathcal{P}_{\textrm{period}}(g)`$ and microfibril energy $\textrm{E}_{\textrm{M}}(g)$ as a function of pH and pKa. 
 
 
 ## 4. Generating Main Figures 
@@ -61,7 +61,7 @@ The relevant script is found in `.../scripts/appendixFigures/`. Uncomment the re
 ## 6. Computing Environment 
 
 - **OS:** macOS Monterey 12.7.6
-- **MATLAB Release:** R2024b (**note, for `genMainFig*.m` scripts I strongly advise using an earlier release of MATLAB, such as R2022a**)  
+- **MATLAB Release:** R2024b (**note, for `genMainFig*.m` / `genAppendixFigs.m` scripts I strongly advise using an earlier release of MATLAB, such as R2022a**)  
 - **Toolbox dependencies:** Bioinformatics Toolbox, Image Processing Toolbox, Optimization Toolbox, Parallel Computing Toolbox (optional, but recommended), Signal Processing Toolbox, Statistics and Machine Learning Toolbox, Symbolic Math Toolbox.
 
 ## 7. References
