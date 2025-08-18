@@ -1,7 +1,6 @@
 # ChargedSelfAssembly
 
-This repository contains the code and raw data required to reproduce the results presented in **"The Role of Ionic Conditions and Charged Residues in
-the Emergence of D-Banded Collagen Microfibrils"**.
+This repository contains the code and raw data required to reproduce the results presented in **"Axial Order-Disorder Phase Transitions in Collagen Microfibrils are Controlled by pH and Residue pKa"**.
 
 **Authors**: Arťom Zolotarjov and Dmitri O. Pushkin.
 
