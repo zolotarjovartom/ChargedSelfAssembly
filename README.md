@@ -59,6 +59,8 @@ All of the relevant scripts are found in the directory `.../scripts/mainTextFigu
 - File paths in variables `FPathEqbm`, `FPathRes` and the file path to the directory `.../scripts/methods/...`.
 - The variable `speciesSplit`, which is the same as `Species` variable with the following change: $`\underbrace{\textrm{BosTaurus}}_{\textrm{Species}}\rightarrow \underbrace{\textrm{Bos taurus}}_{\textrm{speciesSplit}}`$.
 
+In the script `CollagenPhaseDiagram.m`, on L333-337 we implement a condition to test for presence of SLS aggregates. Please note that in other scripts this condition is **not** implemented, as SLS aggregates do not appear as a phase in our calculations. If you have doubts whether your data set produces SLS aggregates or not, run `genMainFig5.m` first. 
+
 ## 5. Generating Appendix Figures 
 
 The relevant script is found in `.../scripts/appendixFigures/`. Uncomment the relevant portion of the script to generate the desired Figure. The same file path conventions are used as throughout the rest of this repository. 
