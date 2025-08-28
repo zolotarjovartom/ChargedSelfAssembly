@@ -321,6 +321,9 @@ TF_DA = false(size(eMins));
 %Axially-periodic states: 
 TF_AP = false(size(eMins));
 
+%Tolerance for considering an interaction to be at \Delta z = 0
+zeroThresh = 50; %the tolerance is in Angstroms
+
 %For the states where it is unclear what the state is, identify the lowest
 %energy state:
 for uncidx = 1 : numel(eMins)
@@ -328,7 +331,13 @@ for uncidx = 1 : numel(eMins)
     OptStaggers = EqbmData.EqStates{uncidx}.EqStates{minLocs(uncidx)}.OptStaggers;
     mathcalD = EqbmData.EqStates{uncidx}.DVals(minLocs(uncidx));
     TF_FS = FindFSStates_Vec(OptStaggers,mathcalD,N,eps_tol,N);
-
+    
+    %Check for SLS aggregates and output an error message if present:
+    if all(or(abs(OptStaggers') < zeroThresh, abs(OptStaggers'-5*mathcalD) < zeroThresh))
+       disp('SLS aggregate present');
+       error('stop')
+    end
+    
     %If axially periodic: 
     if and(TF_FS,eMins(uncidx) < eBound)
         TF_AP(uncidx) = TF_FS;
