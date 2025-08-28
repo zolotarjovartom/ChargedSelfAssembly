@@ -63,6 +63,10 @@ All of the relevant scripts are found in the directory `.../scripts/mainTextFigu
 
 The relevant script is found in `.../scripts/appendixFigures/`. Uncomment the relevant portion of the script to generate the desired Figure. The same file path conventions are used as throughout the rest of this repository. 
 
+You will need to specify one new file path:
+
+- `FPathE`, which specifies the location of the `Species|Type*|A*|A*|A*|pKaGrid.mat` file. 
+
 ## 6. Computing Environment 
 
 - **OS:** macOS Monterey 12.7.6
