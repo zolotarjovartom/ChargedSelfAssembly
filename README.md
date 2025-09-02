@@ -4,14 +4,32 @@ This repository contains the code and raw data required to reproduce the results
 
 **Authors**: Arťom Zolotarjov and Dmitri O. Pushkin.
 
-## 1. Raw Data Required For Calculations 
+## 1. Raw Data 
+
+In case you do not want to regenerate the raw data used for producing Figures and key results of the paper, it can be found on the following google drive link: https://drive.google.com/drive/folders/1V79fwFSCB7OY-rQXpKHsx-NGbwAIULCu?usp=sharing
+
+The directory structure on the google drive is as follows: 
+
+```
+│── /Bulk Residue Data # Contains the residue spatial coordinates / residue sequences for different mammalian species
+│   │── /BulkResData_Type*|A*|A*|A*_Mammals.mat
+│── /Data for ChargedSelfAssembly # Data relevant to the ChargedSelfAssembly repository (current repository)
+│   │── /Species|Type*|A*|A*|A*|pKaGrid.mat # Interaction energy curves as a function of pH and pKa
+│   │── /EqbmProbspKaGrid_Species|Type*|A*|A*|A*.mat # Equilibrium probabilities and microfibril energies as a function of pH and pKa
+│── /Data for ChiralSelfAssembly # Data relevant to the ChiralSelfAssembly repository
+│── /Data for FLSCSelfAssembly # Data relevant to the FLSCSelfAssembly repository
+│── /Effective Stagger Vectors # Discretised axial staggers for pairwise molecular interactions
+│   │── /EffDVecs_Mammals_Type*|A*|A*|A*.mat
+```
+
+## 2. Raw Data Required For Calculations 
 
 Several types of raw data are required to perform the calculations. The methods for obtaining these raw data files are described in the ChiralSelfAssembly repository. You will need: 
 
 - `BulkResData_Type*_|A*|A*|A*_Mammmals.mat`. Path specified in the variable `FPathRes`.
 - `EffDVecs_Mammals_Type*|A*|A*|A*.mat`. Path specified in the variable `FPathS`.
 
-## 2. Calculation of Pairwise Interaction Energies (pKa/pH dependent)
+## 3. Calculation of Pairwise Interaction Energies (pKa/pH dependent)
 
 The pairwise molecular interactions produced by these scripts are different from those in the ChiralSelfAssembly repository. New interaction data is produced by running the script `getIntCurves_pH_pKa.m`, remembering to specify the following variables: 
 
@@ -35,7 +53,7 @@ The output above contains both the interaction energies $`\textrm{U}_{i\textrm{-
 
 The specified value of the overlap parameter applies to both acidic and basic residues. This means that `out.S.muMeasure_minus0_5.Energy` will output a data structure containing $`\textrm{U}_{i\textrm{-}j}(\Delta z)`$ for $`\mu(W_{\textrm{Glu}},W_{\textrm{Asp}}) = -0.5`$ at acidic pH values and for $`\mu(W_{\textrm{Arg}},W_{\textrm{Lys}}) = -0.5`$ at basic pH values. 
 
-## 3. Calculating Equilibrium Statistics 
+## 4. Calculating Equilibrium Statistics 
 
 To calculate the equilibrium statistics, which are required for reproducing the main Figures in the paper, you will need to run the script `runProbsOnpKaGrid.m`, which is located in the directory `.../scripts/eqbmStatistics/...`. You will need to specify the following:
 
@@ -52,7 +70,7 @@ This script produces a new type of output file:
 The output contains the equilibrium probability $`\mathcal{P}_{\textrm{period}}(g)`$ and microfibril energy $\textrm{E}_{\textrm{M}}(g)$ as a function of pH and pKa. 
 
 
-## 4. Generating Main Figures 
+## 5. Generating Main Figures 
 
 All of the relevant scripts are found in the directory `.../scripts/mainTextFigures/...`. The scripts are all in the format `genMainFig*.m`. You will need to specify the following:
 
@@ -61,7 +79,7 @@ All of the relevant scripts are found in the directory `.../scripts/mainTextFigu
 
 In the script `CollagenPhaseDiagram.m`, on L333-337 we implement a condition to test for presence of SLS aggregates. Please note that in other scripts this condition is **not** implemented, as SLS aggregates do not appear as a phase in our calculations. If you have doubts whether your data set produces SLS aggregates or not, run `genMainFig5.m` first. 
 
-## 5. Generating Appendix Figures 
+## 6. Generating Appendix Figures 
 
 The relevant script is found in `.../scripts/appendixFigures/`. Uncomment the relevant portion of the script to generate the desired Figure. The same file path conventions are used as throughout the rest of this repository. 
 
@@ -69,13 +87,13 @@ You will need to specify one new file path:
 
 - `FPathE`, which specifies the location of the `Species|Type*|A*|A*|A*|pKaGrid.mat` file. 
 
-## 6. Computing Environment 
+## 7. Computing Environment 
 
 - **OS:** macOS Monterey 12.7.6
 - **MATLAB Release:** R2024b (**note, for `genMainFig*.m` / `genAppendixFigs.m` scripts I strongly advise using an earlier release of MATLAB, such as R2022a**)  
 - **Toolbox dependencies:** Bioinformatics Toolbox, Image Processing Toolbox, Optimization Toolbox, Parallel Computing Toolbox (optional, but recommended), Signal Processing Toolbox, Statistics and Machine Learning Toolbox, Symbolic Math Toolbox.
 
-## 7. References
+## 8. References
 
 [1] `distinguishable_colors.m` script obtained from https://github.com/cortex-lab/MATLAB-tools/blob/master/distinguishable_colors.m.
 
