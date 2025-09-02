@@ -6,7 +6,7 @@ This repository contains the code and raw data required to reproduce the results
 
 ## 1. Raw Data 
 
-In case you do not want to regenerate the raw data used for producing Figures and key results of the paper, it can be found on the following google drive link: https://drive.google.com/drive/folders/1V79fwFSCB7OY-rQXpKHsx-NGbwAIULCu?usp=sharing
+In case you do not want to regenerate the raw data used for producing Figures and key results of the paper, it can be found on the following google drive link: https://drive.google.com/drive/folders/1V79fwFSCB7OY-rQXpKHsx-NGbwAIULCu?usp=drive_link
 
 The directory structure on the google drive is as follows: 
 
